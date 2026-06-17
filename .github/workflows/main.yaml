@@ -13,6 +13,12 @@ jobs:
       - name: code checkout
         uses: actions/checkout@v4
 
+      - name: setup java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
       - name: build
         run: mvn install
 
@@ -23,6 +29,12 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v4
+
+      - name: setup java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
 
       - name: test
         run: mvn test
