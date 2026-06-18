@@ -21,6 +21,11 @@ jobs:
 
       - name: build
         run: mvn install
+      - name: uploading the artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: target/*.war
 
   Testing:
     runs-on: ubuntu-latest
