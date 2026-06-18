@@ -53,7 +53,8 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v4
-
+      - name: Resolve Maven Dependencies
+        run: mvn dependency:resolve
       - name: Run Trivy FS Scan
         uses: aquasecurity/trivy-action@master
         with:
